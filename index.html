@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ClassMate+</title>
+  <meta name="description" content="ClassMate+ — announcements, tasks, schedules, and chat for your class, in one place." />
+  <meta name="theme-color" content="#5B4FE8" />
+
+  <link rel="manifest" href="public/manifest.json" />
+  <link rel="icon" href="public/icons/icon-96.png" />
+  <link rel="apple-touch-icon" href="public/icons/icon-180.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="src/css/tokens.css" />
+  <link rel="stylesheet" href="src/css/base.css" />
+  <link rel="stylesheet" href="src/css/layout.css" />
+  <link rel="stylesheet" href="src/css/components.css" />
+
+  <!-- Client-side OCR for "Scan schedule photo" — no backend/API key needed. -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- ClassMate+ mounts here. See src/js/app.js for the router. -->
+  </div>
+
+  <script type="module" src="src/js/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        // Relative path — resolves correctly whether this is hosted at
+        // the domain root or under a GitHub Pages project subpath.
+        navigator.serviceWorker.register("service-worker.js").catch(console.error);
+      });
+    }
+  </script>
+</body>
+</html>

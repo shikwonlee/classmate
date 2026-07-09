@@ -1,0 +1,128 @@
+/*
+  CLASSMATE+ DESIGN TOKENS
+  ------------------------
+  Palette grows out of the app icon: violet as the academic/collaboration
+  primary, amber as the "signal" accent (due dates, tassels, unread badges).
+  Signature motif: a "cut corner" (one clipped corner, echoing the cap's
+  diamond silhouette) used on hero cards and the active nav item —
+  a single recurring shape instead of generic rounded-everywhere cards.
+*/
+
+:root {
+  /* ---- Color: Light ---- */
+  --color-primary: #5B4FE8;
+  --color-primary-strong: #3F35C8;
+  --color-primary-soft: #ECEAFE;
+  --color-accent: #FF9A3D;
+  --color-accent-strong: #E87F1F;
+  --color-accent-soft: #FFEEDC;
+
+  --color-bg: #F7F7FB;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F0EFFA;
+  --color-border: #E4E3F0;
+
+  --color-text: #1B1A2E;
+  --color-text-muted: #6B6980;
+  --color-text-faint: #9997AC;
+
+  --color-success: #2EAD6B;
+  --color-warning: #E8A72B;
+  --color-danger: #E8503F;
+  --color-online: #33C17A;
+
+  /* ---- Color: Dark (applied via [data-theme="dark"]) ---- */
+  --color-bg-dark: #131226;
+  --color-surface-dark: #1B1A33;
+  --color-surface-alt-dark: #23223F;
+  --color-border-dark: #2E2D4E;
+  --color-text-dark: #EDEBFF;
+  --color-text-muted-dark: #A6A4C4;
+
+  /* ---- Type ---- */
+  --font-display: 'Poppins', 'Segoe UI', sans-serif;
+  --font-body: 'Poppins', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Roboto Mono', monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- Space & shape ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* the signature clipped-corner size used on hero/active elements */
+  --cut-corner: 18px;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 2px 8px rgba(27, 26, 46, 0.06);
+  --shadow-md: 0 8px 24px rgba(27, 26, 46, 0.10);
+  --shadow-lg: 0 16px 40px rgba(27, 26, 46, 0.16);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+
+  /* ---- Layout ---- */
+  --sidebar-width: 264px;
+  --bottom-nav-height: 64px;
+  --topbar-height: 64px;
+}
+
+[data-theme="dark"] {
+  --color-bg: var(--color-bg-dark);
+  --color-surface: var(--color-surface-dark);
+  --color-surface-alt: var(--color-surface-alt-dark);
+  --color-border: var(--color-border-dark);
+  --color-text: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted-dark);
+  --color-primary-soft: #2A2860;
+  --color-accent-soft: #3A2A1C;
+}
+
+[data-theme="gray"] {
+  --color-bg: #F2F2F4;
+  --color-surface: #FBFBFC;
+  --color-surface-alt: #E9E9EC;
+  --color-primary: #55535F;
+  --color-primary-strong: #3B3944;
+  --color-accent: #FF9A3D;
+}
+
+[data-theme="blue"] {
+  --color-primary: #2D6CDF;
+  --color-primary-strong: #1E4FB0;
+  --color-primary-soft: #E4ECFC;
+  --color-accent: #23C4C0;
+  --color-accent-strong: #17A19D;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,194 @@
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), background var(--duration-fast) var(--ease-standard);
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn--primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-sm); }
+.btn--primary:hover { background: var(--color-primary-strong); }
+
+.btn--secondary { background: var(--color-surface-alt); color: var(--color-text); }
+.btn--secondary:hover { background: var(--color-border); }
+
+.btn--outline { background: transparent; border: 1.5px solid var(--color-border); color: var(--color-text); }
+
+.btn--danger { background: var(--color-danger); color: #fff; }
+
+.btn--google {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+.btn--google:hover { box-shadow: var(--shadow-md); }
+
+.btn--full { width: 100%; }
+.btn--icon { padding: var(--space-2); border-radius: var(--radius-full); }
+.btn--sm { padding: var(--space-2) var(--space-3); font-size: var(--fs-xs, 0.8rem); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.card--hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-strong) 100%);
+  color: #fff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.card--hero p, .card--hero h1, .card--hero h2, .card--hero h3 { color: #fff; }
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+}
+
+.badge--accent { background: var(--color-accent-soft); color: var(--color-accent-strong); }
+.badge--success { background: #E4F6EC; color: var(--color-success); }
+.badge--danger { background: #FCE7E4; color: var(--color-danger); }
+.badge--muted { background: var(--color-surface-alt); color: var(--color-text-muted); }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot--online { background: var(--color-online); }
+.dot--offline { background: var(--color-text-faint); }
+
+/* ---------- Avatar ---------- */
+.avatar {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  background: var(--color-surface-alt);
+}
+
+.avatar--sm { width: 28px; height: 28px; }
+.avatar--lg { width: 88px; height: 88px; }
+
+/* ---------- Forms ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.field label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  transition: border var(--duration-fast) var(--ease-standard);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* ---------- Empty states ---------- */
+.empty-state {
+  text-align: center;
+  padding: var(--space-7) var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.empty-state h3 { color: var(--color-text); }
+
+/* ---------- Auth screen ---------- */
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background:
+    radial-gradient(circle at 20% 20%, var(--color-primary-soft), transparent 40%),
+    var(--color-bg);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.auth-card img.auth-logo { width: 72px; height: 72px; margin: 0 auto var(--space-4); border-radius: 18px; }
+
+/* ---------- Modal dialogs ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(19, 18, 38, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  z-index: 100;
+  animation: fade-in var(--duration-base) var(--ease-standard);
+}
+
+.modal-panel {
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- Skeleton loading ---------- */
+.skeleton {
+  background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-border) 37%, var(--color-surface-alt) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
